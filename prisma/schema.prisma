@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Shop {
+  id               String     @id @default(uuid())
+  slug             String     @unique
+  name             String
+  address          String
+  phone            String
+  openingHours     String
+  orderingLink     String?
+  passwordHash     String
+  imageUrl         String?    // Hero image for the shop
+  categories       Category[]
+  items            Item[]
+}
+
+model Category {
+  id      String @id @default(uuid())
+  shopId  String
+  shop    Shop   @relation(fields: [shopId], references: [id])
+  name    String
+  sort    Int    @default(0)
+  items   Item[]
+}
+
+model Item {
+  id          String   @id @default(uuid())
+  shopId      String
+  shop        Shop     @relation(fields: [shopId], references: [id])
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  name        String
+  description String?
+  price       Float
+  isAvailable Boolean  @default(true)
+  isOffer     Boolean  @default(false)
+  sort        Int      @default(0)
+  variants    String?
+  imageUrl    String?    // Image for the menu item
+}
