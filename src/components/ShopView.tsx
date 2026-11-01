@@ -96,7 +96,7 @@ export function ShopView({ shop, isDemoMode, onEditItem }: { shop: ShopData, isD
       <div className="p-4 md:p-8">
         {filteredCategories.length === 0 && (
           <div className="text-center text-gray-500 py-16">
-            <p className="text-xl">Keine Ergebnisse für "{searchQuery}" gefunden.</p>
+            <p className="text-xl">Keine Ergebnisse für &quot;{searchQuery}&quot; gefunden.</p>
           </div>
         )}
         

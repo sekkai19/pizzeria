@@ -41,5 +41,8 @@ The platform enables:
 
 ## 4. Current State & Known Details
 - Database contains models for shops, categories, and items with ordering links, images, price offers, and availability toggles.
-- Standard seed includes "Mario's Pizza" with pizza, pasta, and drink categories.
-- Git repository is not yet initialized in the project root.
+- Standard seed includes "Mario's Pizza" (`marios-pizza`) with pizza, pasta, and drink categories.
+- Git repository published to GitHub at `https://github.com/sekkai19/pizzeria`.
+- Configured static export (`output: 'export'`) with `generateStaticParams` for pre-rendering public routes (`/demo`, `/marios-pizza`, `/marios-pizza/admin`).
+- Configured GitHub Pages deployment from `gh-pages` branch at `https://sekkai19.github.io/pizzeria/`.
+- Full-stack dynamic admin editing with SQLite persistence remains available when deployed to Node.js / Vercel platforms.
