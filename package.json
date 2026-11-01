@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "next build && gh-pages -d out --dotfiles",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate"
@@ -29,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.3.6",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
     "typescript": "^5.9.3"
   }
